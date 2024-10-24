@@ -1,0 +1,21 @@
+test {
+  useJUnitPlatform()
+
+  dependsOn(tasks.ktlintFormat)
+}
+
+dependencies {
+  testImplementation 'org.springframework.security:spring-security-test'
+  testImplementation('org.springframework.boot:spring-boot-starter-test') {
+    exclude group: 'org.mockito', module: 'mockito-core'
+  }
+
+  testImplementation 'io.rest-assured:rest-assured:5.5.0'
+
+  testImplementation 'com.ninja-squad:springmockk:4.0.2'
+  testImplementation 'io.mockk:mockk:1.13.13'
+  testImplementation 'io.kotest:kotest-runner-junit5:5.9'
+  testImplementation 'io.kotest:kotest-assertions-core:5.9'
+
+  testImplementation 'com.navercorp.fixturemonkey:fixture-monkey-starter-kotlin:1.0.26'
+}

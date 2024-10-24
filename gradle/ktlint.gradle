@@ -1,0 +1,18 @@
+ktlint {
+  verbose = true
+
+  additionalEditorconfig = [
+    "max_line_length"  : "120",
+    "indent_size"      : "2",
+    "ktlint_code_style": "intellij_idea"
+  ]
+
+  reporters {
+    reporter "json"
+  }
+
+  filter {
+    exclude("**/generated/**")
+    include("**/kotlin/**")
+  }
+}
